@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://s4427i5r5x0e"]
+
+[ext_resource type="Script" path="res://circles.gd" id="1_j4q5p"]
+[ext_resource type="PackedScene" uid="uid://ct2h4x7bwam6d" path="res://dodecahedrons.tscn" id="2_1631i"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vrufi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3oi3w"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="circles" type="Node3D" parent="."]
+script = ExtResource("1_j4q5p")
+circleScene = ExtResource("2_1631i")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 25, -0.146139)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 67.3154)
+
+[node name="background" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="background"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_vrufi")
+surface_material_override/0 = SubResource("StandardMaterial3D_3oi3w")
