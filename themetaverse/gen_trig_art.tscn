@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwry3haewupsy"]
+
+[ext_resource type="Script" path="res://gen_trig_art.gd" id="1_es2ua"]
+[ext_resource type="PackedScene" uid="uid://bf3t840fiunpp" path="res://dod.tscn" id="2_3hv2w"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7uihv"]
+
+[node name="root" type="Node3D"]
+script = ExtResource("1_es2ua")
+dod = ExtResource("2_3hv2w")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00771427, 0.99997, 0, -0.99997, 0.00771427, 0, 21.9852, 0.0498343)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7uihv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24.5389, 0)
