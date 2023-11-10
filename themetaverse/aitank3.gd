@@ -14,21 +14,35 @@ var q2:Quaternion
 
 
 func _ready():
-	to_target = tank.position - position 
+	lookAtPlayer()
+	
+
+func lookAtPlayer():
+	to_target = tank.position
 	speed = to_target.length() / time
 	
-	q1 = Quaternion.IDENTITY
-	q2 = Quaternion()	
+	q1 = transform.basis.get_rotation_quaternion()
+	var angle = Vector3.BACK
+	if tank.position.x < position.x:
+		angle += PI
 	
+	
+	q2 = Quaternion()
+	t = 0
 
 func _process(delta):
 	DebugDraw.set_text("to_target", str(to_target))
 	DebugDraw.set_text("Distance", str(to_target.length()))
 	var dir = to_target.normalized()
-	# look_at(-to_target)
+#	# look_at(-to_target)
+
+	if Input.is_key_pressed(KEY_P):
+			lookAtPlayer()
+#	
 	
-	# var theta = to_target.angle_to(Vector3.BACK)
-	# rotation = Vector3(0, theta, 0)
+#	# var theta = to_target.angle_to(Vector3.BACK)
+#	# rotation = Vector3(0, theta, 0)
+
 	
 	var dot = dir.dot(Vector3.BACK)
 	var theta = acos(dot)

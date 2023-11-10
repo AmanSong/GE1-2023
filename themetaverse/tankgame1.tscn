@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://cpg5h3e60f4bg" path="res://green.tres" id="1_4wjot"]
 [ext_resource type="Script" path="res://tank1.gd" id="2_n83ob"]
-[ext_resource type="Material" path="res://Tank Material.tres" id="2_y21kj"]
+[ext_resource type="Material" uid="uid://nhu2r5spu63n" path="res://Tank Material.tres" id="2_y21kj"]
 [ext_resource type="Script" path="res://wall.gd" id="3_rwbqd"]
 [ext_resource type="PackedScene" uid="uid://c6xhwirvnwrnp" path="res://brick.tscn" id="4_rtrnv"]
 
